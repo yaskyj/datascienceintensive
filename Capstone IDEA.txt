@@ -1,0 +1,19 @@
+1. Consumer Complaints Database - Financial Products and Services
+http://catalog.data.gov/dataset/consumer-complaint-database
+
+2. Federal Student Loan Program
+http://catalog.data.gov/dataset/federal-student-loan-program-data
+
+3. Census data
+http://catalog.data.gov/dataset/economic-census
+
+4. Walmart Recruiting - Trip type classification
+https://www.kaggle.com/c/walmart-recruiting-trip-type-classification
+
+5. Something with the office of personnel management data
+https://www.opm.gov/data/
+
+6. GSS - general social survey
+
+7. Network security
+http://csr.lanl.gov/data/cyber1/
