@@ -1,0 +1,67 @@
+File Manifest for ICPSR 34933
+
+United States Department of Health and Human Services. Substance Abuse and
+Mental Health Services Administration. Center for Behavioral Health
+Statistics and Quality. National Survey on Drug Use and Health, 2012.
+ICPSR34933-v3. Ann Arbor, MI: Inter-university Consortium for Political and
+Social Research [distributor], 2015-11-23.
+http://doi.org/10.3886/ICPSR34933.v3
+
+Details on the version history can be found below the file listings.
+
+
+Study-level Documentation
+
+    Filename                            Record  Record    Var.    Date        MD5
+                                        Length  Count     Count   Updated     Checksum
+
+    34933-related_literature.txt        -       -         -       2016-03-09  -
+
+    34933-manifest.txt                  -       -         -       2016-03-10  -
+
+
+DS0001 National Survey on Drug Use and Health, 2012
+
+    Filename                            Record  Record    Var.    Date        MD5
+                                        Length  Count     Count   Updated     Checksum
+
+    34933-0001-Codebook.pdf             -       -         -       2015-11-23  ffb4d7edd99937d7777697dc50f06ab4
+
+    34933-0001-Data.dta                 -       55,268    3120    2014-10-06  57f8e106a953dff1c6daacd8fbe00940
+
+    34933-0001-Data.rda                 -       55,268    3120    2014-10-06  33d0b6263f0e6f06c93019df42fd5068
+
+    34933-0001-Data.sav                 -       55,268    3120    2014-10-06  2c30303eb410f0a4570a3f041cf7f284
+
+    34933-0001-Data.stc                 -       55,268    3120    2014-10-06  a74fd61c1167ae428bcad780e5824fe2
+
+    34933-0001-Data.tsv                 -       55,268    3120    2014-10-06  fd580badbf013fd2ca5f906544d9868a
+
+    34933-0001-Data.txt                 6818    55,268    3120    2014-10-06  6ae86a5b75cc2ea954f028dc710ce5f4
+
+    34933-0001-Documentation-method_resources.pdf -       -         -       2015-11-23  69f8c19deafdc9c1e4a303f0bea3e9f5
+
+    34933-0001-Questionnaire-screener.pdf -       -         -       2015-11-23  ff8d3aeff5fe21b53904645563e738ef
+
+    34933-0001-Questionnaire-showcards.pdf -       -         -       2015-11-23  ce9e90512cd124ffc502a24f4a498ecf
+
+    34933-0001-Questionnaire-specs.pdf  -       -         -       2015-11-23  4730dbcf6c4b668ed7a73fdc356551c9
+
+    34933-0001-Setup.dct                -       -         -       2015-01-22  1b932d7daa6c43a87db962d82faba537
+
+    34933-0001-Setup.do                 -       -         -       2015-01-22  ce7419b71e1231cfdd8c2fecdb5df5db
+
+    34933-0001-Setup.sas                -       -         -       2015-01-22  3a88d8cc8e15b70a7423e88d629a9a53
+
+    34933-0001-Setup.sps                -       -         -       2015-01-22  be095c57fc4186aca223a8155b11dd0c
+
+    34933-0001-Supplemental_syntax.do   -       -         -       2015-01-22  79ee5e7aabd9d2ea2f42981f4d939eb9
+
+    34933-0001-Supplemental_syntax.sas  -       -         -       2015-01-22  f8d11631d0914ac5b3295f458554197b
+
+
+Version History
+
+2015-11-23 Covers for the PDF documentation were revised.  2015-01-22 Added
+the Methodological Resource Book to the documentation.  2014-10-06
+Corrected the variable label for the AGE2 variable.
