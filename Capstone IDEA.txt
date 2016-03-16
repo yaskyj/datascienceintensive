@@ -1,19 +1,15 @@
-1. Consumer Complaints Database - Financial Products and Services
-http://catalog.data.gov/dataset/consumer-complaint-database
+1. Drugs
+http://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/34933?q=&paging.rows=25&sortBy=10
 
-2. Federal Student Loan Program
-http://catalog.data.gov/dataset/federal-student-loan-program-data
+Explore relationships between different drug types and demographics.
 
-3. Census data
-http://catalog.data.gov/dataset/economic-census
-
-4. Walmart Recruiting - Trip type classification
+2. Walmart Recruiting - Trip type classification
 https://www.kaggle.com/c/walmart-recruiting-trip-type-classification
 
-5. Something with the office of personnel management data
-https://www.opm.gov/data/
+Predict Walmart trip types based on previously classified purchase trips. 
 
-6. GSS - general social survey
+3. AirBnB Kaggle
+https://www.kaggle.com/c/airbnb-recruiting-new-user-bookings
 
-7. Network security
-http://csr.lanl.gov/data/cyber1/
+Predict where a new AirBnB user will book make their first booking.
+
