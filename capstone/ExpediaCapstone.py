@@ -6,7 +6,8 @@ import math as math
 import pandas as pd
 from sklearn.metrics import accuracy_score
 from sklearn.naive_bayes import GaussianNB
-from sklearn.ensemble import AdaBoostClassifier
+from sklearn.svm import SVC
+from sklearn import ensemble
 from sklearn.naive_bayes import BernoulliNB
 from datetime import datetime
 print round(time()-t0,3),"s"
@@ -80,7 +81,11 @@ print round(time()-t0,3),"s"
 print 'Fitting classifier'
 t0 = time()
 #clf = GaussianNB()
-clf = AdaBoostClassifier(n_estimators=10)
+#clf = ensemble.AdaBoostClassifier(n_estimators=10)
+#clf = ensemble.AdaBoostClassifier(SVC(probability=True, kernel='linear'),n_estimators=10)
+#clf = ensemble.GradientBoostingClassifier(SVC(probability=True, kernel='linear'),n_estimators=100, learning_rate=1.0, max_depth=1, random_state=0)
+clf = ensemble.GradientBoostingClassifier(n_estimators=100, learning_rate=1.0, max_depth=1, random_state=0)
+#clf = ensemble.RandomForestClassifier(n_estimators=10)
 #clf - BernoulliNB()
 clf = clf.fit(features_train, labels_train.ravel())
 print round(time()-t0,3),"s"
