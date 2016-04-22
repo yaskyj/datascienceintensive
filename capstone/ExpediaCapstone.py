@@ -1,10 +1,13 @@
 from time import time
+t = time
 print 'Import statements'
 t0 = time()
+import math as math
 import pandas as pd
 from sklearn.metrics import accuracy_score
 from sklearn.naive_bayes import GaussianNB
 from sklearn.ensemble import AdaBoostClassifier
+from sklearn.naive_bayes import BernoulliNB
 from datetime import datetime
 print round(time()-t0,3),"s"
 
@@ -53,12 +56,13 @@ all_train['orig_destination_distance'] = all_train['orig_destination_distance'].
 all_train = all_train.drop(['date_time','srch_ci','srch_co','is_booking', 'cnt'], 1)
 print round(time()-t0,3),"s"
 
-#t0 = time()
-#Split into training and test data
+print 'Creating smaller training dataset'
+t0 = time()
 #split = int(0.75*len(all_train))
+#all_train = all_train[split:]
 #train = all_train[0:split]
 #test  = all_train[split:]
-#print round(time()-t0,3),"s"
+print round(time()-t0,3),"s"
 
 print 'Separating features from labels'
 t0 = time()
@@ -76,8 +80,8 @@ print round(time()-t0,3),"s"
 print 'Fitting classifier'
 t0 = time()
 #clf = GaussianNB()
-#clf.fit(features_train, labels_train.ravel())
-clf = AdaBoostClassifier(n_estimators=20)
+clf = AdaBoostClassifier(n_estimators=10)
+#clf - BernoulliNB()
 clf = clf.fit(features_train, labels_train.ravel())
 print round(time()-t0,3),"s"
 
@@ -160,3 +164,5 @@ print 'Exporting submission dataframe'
 t0 = time()
 submission.to_csv('submission.csv', index=False)
 print round(time()-t0,3),"s"
+
+print round(math.ceil((time()-t)/60),2),'minutes'
