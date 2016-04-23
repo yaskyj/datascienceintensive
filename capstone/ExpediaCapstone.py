@@ -4,12 +4,15 @@ print 'Import statements'
 t0 = time()
 import math as math
 import pandas as pd
-from sklearn.metrics import accuracy_score
-from sklearn.naive_bayes import GaussianNB
-from sklearn.svm import SVC
+#from sklearn.metrics import accuracy_score
+#from sklearn.naive_bayes import GaussianNB
+#from sklearn.svm import SVC
 from sklearn import ensemble
-from sklearn.naive_bayes import BernoulliNB
-from datetime import datetime
+#from sklearn.naive_bayes import BernoulliNB
+#from datetime import datetime
+#from blaze import Data
+#import dask.dataframe as dd
+import dask.array as da
 print round(time()-t0,3),"s"
 
 print 'Training dtypes'
@@ -57,13 +60,13 @@ all_train['orig_destination_distance'] = all_train['orig_destination_distance'].
 all_train = all_train.drop(['date_time','srch_ci','srch_co','is_booking', 'cnt'], 1)
 print round(time()-t0,3),"s"
 
-print 'Creating smaller training dataset'
-t0 = time()
-#split = int(0.75*len(all_train))
+#print 'Creating smaller training dataset'
+#t0 = time()
+#split = int(0.50*len(all_train))
 #all_train = all_train[split:]
 #train = all_train[0:split]
 #test  = all_train[split:]
-print round(time()-t0,3),"s"
+#print round(time()-t0,3),"s"
 
 print 'Separating features from labels'
 t0 = time()
@@ -71,23 +74,22 @@ features_train = all_train.ix[:,:'hotel_market']
 labels_train = all_train.ix[:,'hotel_cluster':]
 #features_test = test.ix[:,:'hotel_market'] 
 #labels_test = test.ix[:,'hotel_cluster':]
-features_train = features_train.values
-labels_train = labels_train.values
+features_train = da.from_array(features_train.values, chunks=1000)
+labels_train = da.from_array(labels_train.values, chunks=1000)
 #features_test = features_test.values
 #labels_test = labels_test.values
 print round(time()-t0,3),"s"
 
-
 print 'Fitting classifier'
 t0 = time()
 #clf = GaussianNB()
-#clf = ensemble.AdaBoostClassifier(n_estimators=10)
+clf = ensemble.AdaBoostClassifier(n_estimators=10)
 #clf = ensemble.AdaBoostClassifier(SVC(probability=True, kernel='linear'),n_estimators=10)
 #clf = ensemble.GradientBoostingClassifier(SVC(probability=True, kernel='linear'),n_estimators=100, learning_rate=1.0, max_depth=1, random_state=0)
-clf = ensemble.GradientBoostingClassifier(n_estimators=100, learning_rate=1.0, max_depth=1, random_state=0)
+#clf = ensemble.GradientBoostingClassifier(n_estimators=100, learning_rate=1.0, max_depth=1, random_state=0, verbose=3)
 #clf = ensemble.RandomForestClassifier(n_estimators=10)
 #clf - BernoulliNB()
-clf = clf.fit(features_train, labels_train.ravel())
+clf = clf.fit(features_train, labels_train)
 print round(time()-t0,3),"s"
 
 #t0 = time()
@@ -170,4 +172,4 @@ t0 = time()
 submission.to_csv('submission.csv', index=False)
 print round(time()-t0,3),"s"
 
-print round(math.ceil((time()-t)/60),2),'minutes'
+print round(time()-t,3),"s"
