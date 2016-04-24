@@ -1,8 +1,7 @@
 from time import time
-t = time
+t = time()
 print 'Import statements'
 t0 = time()
-import math as math
 import pandas as pd
 #from sklearn.metrics import accuracy_score
 #from sklearn.naive_bayes import GaussianNB
@@ -142,10 +141,11 @@ print round(time()-t0,3),"s"
 
 print 'Predicting label probabilities'
 t0 = time()
+#pred = clf.predict(testing_file)
 probs = pd.DataFrame(clf.predict_proba(testing_file))
 print round(time()-t0,3),"s"
 
-print 'Predicting label probabilities'
+print 'Extracting top 5 label probabilities'
 t0 = time()
 probs_series = pd.Series([(i, r.sort_values(ascending=False)[:5].index.values) for i,r in probs.iterrows()])
 probs_series = probs_series.values
@@ -156,9 +156,6 @@ t0 = time()
 indices = [a for a,b in probs_series]
 values = [b for a,b in probs_series]
 print round(time()-t0,3),"s"
-
-#t0 = time()
-#pred = clf.predict(testing_file)
 
 print 'Creating submission dataframe'
 t0 = time()
@@ -172,4 +169,4 @@ t0 = time()
 submission.to_csv('submission.csv', index=False)
 print round(time()-t0,3),"s"
 
-print round(time()-t,3),"s"
+print round(((time()-t)/60)/60,2),"hours"
