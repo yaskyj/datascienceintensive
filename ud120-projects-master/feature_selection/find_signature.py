@@ -9,7 +9,9 @@ numpy.random.seed(42)
 ### These files should have been created from the previous (Lesson 10)
 ### mini-project.
 words_file = "../text_learning/your_word_data.pkl" 
+#words_file = "word_data.pkl"
 authors_file = "../text_learning/your_email_authors.pkl"
+#authors_file = "email_authors.pkl"
 word_data = pickle.load( open(words_file, "r"))
 authors = pickle.load( open(authors_file, "r") )
 
@@ -36,8 +38,16 @@ features_train = features_train[:150].toarray()
 labels_train   = labels_train[:150]
 
 
-
 ### your code goes here
-
-
-
+from sklearn import tree
+from sklearn.metrics import accuracy_score
+clf = tree.DecisionTreeClassifier()
+clf = clf.fit(features_train, labels_train)
+predict = clf.predict(features_test)
+print accuracy_score(predict, labels_test)
+import pandas as pd
+feature_import = pd.DataFrame(clf.feature_importances_)
+feature_import = feature_import.sort_values([0],ascending=False)
+print feature_import.head()
+feature_names = pd.DataFrame(vectorizer.get_feature_names())
+print feature_names.iloc[[21323]]
