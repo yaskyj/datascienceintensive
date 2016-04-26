@@ -1,0 +1,34 @@
+1. GaussianNB() - .0425
+- No feature selection - dates, is_booking, and cnt removed
+- Training - entire population
+- Predict - only one
+
+2. GaussianNB() - .10836
+- No feature selection - dates, is_booking, and cnt removed
+- Training - entire population
+- Predict - five highest probabilities
+
+3. Decision Tree(min_samples_split=500) - .29244
+- Feature selection - KBest = 10, dates, is_booking, and cnt removed
+- Training - entire population
+- Predict - five highest probablities
+
+4. Random Forest(n_estimators=5) - .23752
+- Feature selection - KBest = 10, dates, is_booking, and cnt removed
+- Training - entire population
+- Predict - five highest probablities
+
+5. Decision Tree(min_samples_split=250) - .23989
+- Feature selection - KBest = 7, dates, is_booking, and cnt removed
+- Training - entire population
+- Predict - five highest probablities
+
+6. Decision Tree(min_samples_split=250) - .28955
+- Feature selection - KBest = 10, dates, is_booking, and cnt removed
+- Training - entire population
+- Predict - five highest probablities
+
+7. Decision Tree(min_samples_split=250) - .29241
+- Feature selection - KBest = 12, dates, is_booking, and cnt removed
+- Training - entire population
+- Predict - five highest probablities
