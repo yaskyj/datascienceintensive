@@ -29,6 +29,11 @@
 - Predict - five highest probablities
 
 7. Decision Tree(min_samples_split=250) - .29241
-- Feature selection - KBest = 12, dates, is_booking, and cnt removed
+- Feature selection - KBest = 12, dates and cnt removed
+- Training - entire population
+- Predict - five highest probablities
+
+8. Decision Tree(min_samples_split=500) - 
+- Feature selection - KBest not done, ['activity_month', 'is_booking', 'user_location_country', 'user_location_region', 'user_location_city', 'hotel_market', 'orig_destination_distance', 'checkin_month', 'checkout_month']
 - Training - entire population
 - Predict - five highest probablities
