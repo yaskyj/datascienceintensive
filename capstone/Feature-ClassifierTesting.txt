@@ -33,7 +33,32 @@
 - Training - entire population
 - Predict - five highest probablities
 
-8. Decision Tree(min_samples_split=500) - 
-- Feature selection - KBest not done, ['activity_month', 'is_booking', 'user_location_country', 'user_location_region', 'user_location_city', 'hotel_market', 'orig_destination_distance', 'checkin_month', 'checkout_month']
+8. Decision Tree(min_samples_split=100) - .22626
+- Feature selection - KBest not done, ['activity_month', 'user_location_country', 'user_location_region', 'user_location_city', 'hotel_market', 'orig_destination_distance', 'checkin_month', 'checkout_month']
+- Training - only booking events
+- Predict - five highest probablities
+
+9. Adaboost() - .10706
+- Feature selection - KBest not done, ['activity_month', 'user_location_country', 'user_location_region', 'user_location_city', 'hotel_market', 'orig_destination_distance', 'checkin_month', 'checkout_month']
+- Training - only booking events
+- Predict - five highest probablities
+
+10. Decision Tree(min_samples_split=100) - .23157
+- Feature selection - KBest = 5, ['activity_month', 'user_location_country', 'user_location_region', 'user_location_city', 'hotel_market', 'orig_destination_distance', 'checkin_month', 'checkout_month']
+- Training - only booking events
+- Predict - five highest probablities
+
+11. Logistic Regression(tol=0.1) - .07127
+- Feature selection - KBest = 8, ['activity_month', 'user_location_country', 'user_location_region', 'user_location_city', 'hotel_market', 'orig_destination_distance', 'checkin_month', 'checkout_month']
+- Training - only booking events
+- Predict - five highest probablities
+
+12. Random Forest() - .14308
+- Feature selection - KBest = 8, ['activity_month', 'user_location_country', 'user_location_region', 'user_location_city', 'hotel_market', 'orig_destination_distance', 'checkin_month', 'checkout_month']
+- Training - only booking events
+- Predict - five highest probablities
+
+13. Decision Tree(min_samples_split=500) - .24062
+- Feature selection - KBest = 8, ['activity_month', 'user_location_country', 'user_location_region', 'user_location_city', 'hotel_market', 'orig_destination_distance', 'checkin_month', 'checkout_month']
 - Training - entire population
 - Predict - five highest probablities
