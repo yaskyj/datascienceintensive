@@ -62,3 +62,8 @@
 - Feature selection - KBest = 8, ['activity_month', 'user_location_country', 'user_location_region', 'user_location_city', 'hotel_market', 'orig_destination_distance', 'checkin_month', 'checkout_month']
 - Training - entire population
 - Predict - five highest probablities
+
+14. Decision Tree(min_samples_split=500) - .27417
+- Feature selection - KBest not used, all plus months
+- Training - 70% of pop
+- Predict - five highest probablities
