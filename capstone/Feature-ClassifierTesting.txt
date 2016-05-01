@@ -67,3 +67,8 @@
 - Feature selection - KBest not used, all plus months
 - Training - 70% of pop
 - Predict - five highest probablities
+
+15. Random Forest(n_estimators=20, min_samples_split=100, max_features=10) - .28643
+- Feature selection - KBest not used, all plus months
+- Training - 50% of pop
+- Predict - five highest probablities
