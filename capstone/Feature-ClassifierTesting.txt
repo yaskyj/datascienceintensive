@@ -69,6 +69,16 @@
 - Predict - five highest probablities
 
 15. Random Forest(n_estimators=20, min_samples_split=100, max_features=10) - .28643
-- Feature selection - KBest not used, all plus months
-- Training - 50% of pop
+- Feature selection - PCA, all plus months
+- Training - 50%
+- Predict - five highest probablities
+
+16. Random Forest(n_estimators=20, min_samples_split=100, max_features=10) - .26136
+- Feature selection - PCA, all plus months
+- Training - split pop between items with and without matches in the destination file
+- Predict - five highest probablities
+
+17. Decision Tree(min_samples_split=500) - .28496
+- Feature selection - PCA not used, all plus months
+- Training - split pop between items with and without matches in the destination file
 - Predict - five highest probablities
