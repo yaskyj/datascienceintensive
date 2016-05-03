@@ -115,6 +115,12 @@ with_features = with_features.reindex_axis(sorted(with_features.columns), axis=1
 wo_features = wo_features.reindex_axis(sorted(wo_features.columns), axis=1)
 print round(time()-t0,3),"s"
 
+print 'Delete all_train dataframe'
+t0 = time()
+del all_train
+del destinations
+print round(time()-t0,3),"s"
+
 print 'Fitting classification model'
 t0 = time()
 #clf = LogisticRegression(tol=0.1)
@@ -129,7 +135,15 @@ t0 = time()
 clf_with = ensemble.RandomForestClassifier(n_estimators=100, min_samples_split=500, n_jobs=-1).fit(with_features, with_labels.values.ravel())
 clf_wo = ensemble.RandomForestClassifier(n_estimators=100, min_samples_split=500, n_jobs=-1).fit(wo_features, wo_labels.values.ravel())
 #clf - BernoulliNB()
-print round(time()-t0,3),"s"
+print round((time()-t0)/60,2),"minutes")
+
+print 'Delete all training dataframes'
+t0 = time()
+del with_features
+del with_labels
+del wo_features
+del wo_labels
+print round((time()-t0)/60,2),"minutes")
 
 print 'Testing dtypes'
 t0 = time()
