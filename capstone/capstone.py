@@ -143,7 +143,7 @@ del with_features
 del with_labels
 del wo_features
 del wo_labels
-print round((time()-t0)/60,2),"minutes"
+print round((time()-t0),3),"s"
 
 print 'Testing dtypes'
 t0 = time()
@@ -193,6 +193,11 @@ with_dest_test = pd.merge(all_test, destinations_df)
 with_testing_ids = with_dest_test['id'] 
 with_testing_features = with_dest_test.drop(['user_id', 'id', 'date_time', 'srch_ci', 'srch_co'],1)
 print round(time()-t0,3),"s"
+
+print 'Delete all_test dataframe'
+t0 = time()
+del all_test
+print round((time()-t0),3),"s"
 
 print 'Testing file without destinations'
 t0 = time()
