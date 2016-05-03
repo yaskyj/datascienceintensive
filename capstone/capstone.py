@@ -5,8 +5,7 @@ print 'Import statements'
 t0 = time()
 import pandas as pd
 import numpy as np
-​#from sklearn import cross_validation
-from sklearn import ensemble
+​from sklearn import ensemble
 from sklearn.decomposition import RandomizedPCA
 #from sklearn.linear_model import LogisticRegression
 #from sklearn.feature_selection import SelectKBest
