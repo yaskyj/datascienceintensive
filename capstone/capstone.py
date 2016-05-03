@@ -197,12 +197,6 @@ with_testing_ids = with_dest_test['id']
 with_testing_features = with_dest_test.drop(['user_id', 'id', 'date_time', 'srch_ci', 'srch_co'],1)
 print round(time()-t0,3),"s"
 
-print 'Delete all_test dataframe'
-t0 = time()
-del all_test
-gc.collect()
-print round((time()-t0),3),"s"
-
 print 'Testing file without destinations'
 t0 = time()
 wo_dest_test = all_test[~(all_test.id.isin(with_dest_test.id))]
@@ -216,6 +210,11 @@ with_testing_features = with_testing_features.reindex_axis(sorted(with_testing_f
 wo_testing_features = wo_testing_features.reindex_axis(sorted(wo_testing_features.columns), axis=1)
 print round(time()-t0,3),"s"
 
+print 'Delete all_test dataframe'
+t0 = time()
+del all_test
+gc.collect()
+print round((time()-t0),3),"s"
 
 print 'Predict probablities'
 t0 = time()
