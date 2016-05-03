@@ -126,8 +126,8 @@ t0 = time()
 #clf = ensemble.GradientBoostingClassifier(n_estimators=100, learning_rate=1.0, max_depth=1, random_state=0, verbose=3)
 # clf_with = tree.DecisionTreeClassifier(min_samples_split=100).fit(with_features, with_labels.values.ravel())
 # clf_wo = tree.DecisionTreeClassifier(min_samples_split=50).fit(wo_features, wo_labels.values.ravel())
-clf_with = ensemble.RandomForestClassifier(n_estimators=20, min_samples_split=500, n_jobs=-1).fit(with_features, with_labels.values.ravel())
-clf_wo = ensemble.RandomForestClassifier(n_estimators=20, min_samples_split=500, n_jobs=-1).fit(wo_features, wo_labels.values.ravel())
+clf_with = ensemble.RandomForestClassifier(n_estimators=100, min_samples_split=500, n_jobs=-1).fit(with_features, with_labels.values.ravel())
+clf_wo = ensemble.RandomForestClassifier(n_estimators=100, min_samples_split=500, n_jobs=-1).fit(wo_features, wo_labels.values.ravel())
 #clf - BernoulliNB()
 print round(time()-t0,3),"s"
 
