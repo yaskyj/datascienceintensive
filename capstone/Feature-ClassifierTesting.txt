@@ -82,3 +82,8 @@
 - Feature selection - PCA not used, all plus months
 - Training - split pop between items with and without matches in the destination file
 - Predict - five highest probablities
+
+18. Decision Tree(min_samples_split=100 & 50) - .27293
+- Feature selection - PCA only on all destinations variables, all plus months
+- Training - split pop between items with and without matches in the destination file
+- Predict - five highest probablities
