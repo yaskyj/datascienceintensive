@@ -4,6 +4,7 @@ print 'Import statements'
 t0 = time()
 import pandas as pd
 import numpy as np
+import gc
 #from sklearn import cross_validation
 from sklearn import ensemble
 from sklearn.decomposition import RandomizedPCA
@@ -119,6 +120,7 @@ print 'Delete all_train dataframe'
 t0 = time()
 del all_train
 del destinations
+gc.collect()
 print round(time()-t0,3),"s"
 
 print 'Fitting classification model'
@@ -143,6 +145,7 @@ del with_features
 del with_labels
 del wo_features
 del wo_labels
+gc.collect()
 print round((time()-t0),3),"s"
 
 print 'Testing dtypes'
@@ -197,6 +200,7 @@ print round(time()-t0,3),"s"
 print 'Delete all_test dataframe'
 t0 = time()
 del all_test
+gc.collect()
 print round((time()-t0),3),"s"
 
 print 'Testing file without destinations'
