@@ -135,7 +135,7 @@ t0 = time()
 clf_with = ensemble.RandomForestClassifier(n_estimators=100, min_samples_split=500, n_jobs=-1).fit(with_features, with_labels.values.ravel())
 clf_wo = ensemble.RandomForestClassifier(n_estimators=100, min_samples_split=500, n_jobs=-1).fit(wo_features, wo_labels.values.ravel())
 #clf - BernoulliNB()
-print round((time()-t0)/60,2),"minutes")
+print round((time()-t0)/60,2),"minutes"
 
 print 'Delete all training dataframes'
 t0 = time()
@@ -143,7 +143,7 @@ del with_features
 del with_labels
 del wo_features
 del wo_labels
-print round((time()-t0)/60,2),"minutes")
+print round((time()-t0)/60,2),"minutes"
 
 print 'Testing dtypes'
 t0 = time()
