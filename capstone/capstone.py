@@ -255,4 +255,4 @@ t0 = time()
 submission.to_csv('submission.csv', index=False)
 print round(time()-t0,3),"s"
 
-print round(((time()-t)/60)/60,2),"hours"
+print round(((time()-t)/60),2),"minutes"
