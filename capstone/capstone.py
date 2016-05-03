@@ -1,5 +1,6 @@
 from time import time
 t = time()
+
 print 'Import statements'
 t0 = time()
 import pandas as pd
