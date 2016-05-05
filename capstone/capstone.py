@@ -49,8 +49,8 @@ print 'Training import'
 t0 = time()
 all_train = pd.read_csv('train.csv', dtype=train_dtypes, iterator=True, chunksize=1000)
 #iter_csv = pandas.read_csv('file.csv', iterator=True, chunksize=1000)
-#all_train = pd.concat([chunk[chunk['is_booking'] == 1] for chunk in all_train])
-all_train = pd.concat(all_train, ignore_index=True)
+all_train = pd.concat([chunk[chunk['is_booking'] == 1] for chunk in all_train], ignore_index=True)
+#all_train = pd.concat(all_train, ignore_index=True)
 #temp_train = pd.read_csv('train.csv', dtype=train_dtypes, iterator=True, chunksize=1000)
 #all_train = pd.concat(temp_train, ignore_index=True)
 print round(time()-t0,3),"s"
@@ -63,6 +63,7 @@ all_train['date_time'] = pd.to_datetime(all_train['date_time'], errors='coerce')
 all_train['srch_ci'] = pd.to_datetime(all_train['srch_ci'], errors='coerce')
 all_train['srch_co'] = pd.to_datetime(all_train['srch_co'], errors='coerce')
 all_train['activity_month'] = all_train['date_time'].fillna(-1).dt.month.astype(int)
+all_train['activity_year'] = all_train['date_time'].fillna(-1).dt.year.astype(int)
 all_train['checkin_month'] = all_train['srch_ci'].fillna(-1).dt.month.astype(int)
 all_train['checkout_month'] = all_train['srch_co'].fillna(-1).dt.month.astype(int)
 #Split groups into two different classifiers for destinations vs. no destinations
